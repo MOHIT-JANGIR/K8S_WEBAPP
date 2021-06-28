@@ -30,6 +30,6 @@ def pvc_update(pvc_file,storage):
 '''
 volume_id=subprocess.getoutput("""aws ec2 describe-volumes --filters Name=tag-value,Values="Terraform-Value" --query "Volumes[0].VolumeId" """)
 
-update("pv-ebs.yml",volume_id,5)
-update("pvc-ebs.yml",5)
+pv_update("pv-ebs.yml",volume_id,5)
+pvc_update("pvc-ebs.yml",5)
 '''
